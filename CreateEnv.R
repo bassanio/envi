@@ -13,7 +13,7 @@ downloadGDriveFile <- function(id, out){
 }
 
 message("Retrieve data for tutorials")
-message("Download R package cache")
+message("Download Data")
 downloadGDriveFile(out="PAGData.tar.gz", id="1W2TJYI1Fc_d7DlYgTLFxaoxeFZ95jZec")
 message("Done")
 
