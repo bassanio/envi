@@ -21,3 +21,11 @@ message("Unzipping Data")
 system("tar -xvzf PAGData.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
+
+
+message("Download R package cache")
+downloadGDriveFile(out="r_binaries.tar.gz", id="1-VqZb_Cv63AH8ogWwhSp48DUowzv_GQf")
+
+#' Unpack cache locally
+message("Unzipping R package cache")
+system("tar -xzf r_binaries.tar.gz -C / ", intern=TRUE)
