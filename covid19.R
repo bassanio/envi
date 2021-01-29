@@ -18,7 +18,7 @@ downloadGDriveFile(out="Data.zip", id="1OPoDDhO43gJHroAqk-eSBze9CsYPPLtP")
 
 
 message("Unzipping Data")
-system("unzip PAGData.tar.gz -C ./ ", intern=TRUE)
+system("unzip Data.zip -C ./ ", intern=TRUE)
 
 message("Done")
 
