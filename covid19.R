@@ -14,11 +14,11 @@ downloadGDriveFile <- function(id, out){
 
 message("Retrieve data for tutorials")
 message("Download Data")
-downloadGDriveFile(out="PAGData.tar.gz", id="1W2TJYI1Fc_d7DlYgTLFxaoxeFZ95jZec")
+downloadGDriveFile(out="Data.zip", id="1OPoDDhO43gJHroAqk-eSBze9CsYPPLtP")
 
 
 message("Unzipping Data")
-system("tar -xvzf PAGData.tar.gz -C ./ ", intern=TRUE)
+system("unzip PAGData.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
 
