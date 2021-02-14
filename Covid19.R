@@ -18,11 +18,3 @@ message("Unzipping Data")
 system("tar -xzf Covid19_DATA.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
-
-
-import os, sys
-from google.colab import drive
-drive.mount('/content/mnt')
-nb_path = '/content/notebooks'
-os.symlink('/content/mnt/My Drive/Colab Notebooks', nb_path)
-sys.path.insert(0, nb_path)  # or append(nb_path)
