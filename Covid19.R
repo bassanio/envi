@@ -15,7 +15,7 @@ downloadGDriveFile(out="Covid19_DATA.tar.gz", id="1uUJ_IJiLGHjW5gmkUx1VrjCtrBotH
 
 
 message("Unzipping Data")
-system("tar -xzf Covid_DATA19.tar.gz -C ./ ", intern=TRUE)
+system("tar -xzf Covid19_DATA.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
 
