@@ -11,10 +11,10 @@ downloadGDriveFile <- function(id, out){
 
 message("Retrieve data for tutorials")
 message("Download Data")
-downloadGDriveFile(out="Covid19_DATA2.tar.gz", id="175re3N107yc6r018I6JqJD7AMRsS-lkm")
+downloadGDriveFile(out="Covid19_Data_68Samples.tar.gz", id="1mI32lLRw-ejnqyF3p4Qr2r9InCHHdaCD")
 
 
 message("Unzipping Data")
-system("tar -xzf Covid19_DATA2.tar.gz -C ./ ", intern=TRUE)
+system("tar -xzf Covid19_Data_68Samples.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
