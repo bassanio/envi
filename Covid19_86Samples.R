@@ -22,4 +22,5 @@ message("Done")
 packageurl <- "https://cran.r-project.org/src/contrib/pillar_1.6.0.tar.gz"
 install.packages(packageurl, repos=NULL, type="source")
 
+sessionInfo()
 #install.packages("pillar")
