@@ -19,6 +19,7 @@ system("tar -xzf Covid19_Data_68Samples.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
 
-install.packages("pheatmap")
-install.packages("ggridges")
-install.packages("pillar")
+packageurl <- "https://cran.r-project.org/src/contrib/pillar_1.6.0.tar.gz"
+install.packages(packageurl, repos=NULL, type="source")
+
+#install.packages("pillar")
