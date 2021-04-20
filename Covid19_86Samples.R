@@ -18,3 +18,7 @@ message("Unzipping Data")
 system("tar -xzf Covid19_Data_68Samples.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
+
+install.packages("pheatmap")
+install.packages("ggridges")
+install.packages("pillar")
