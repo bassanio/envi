@@ -24,9 +24,8 @@ message("Done")
 
 
 message("Download R package")
-install.packages(topr)
-install.packages(qqman)
-
+install.packages("topr")
+install.packages("qqman")
 #downloadGDriveFile(out="r_binaries.tar.gz", id="1-VqZb_Cv63AH8ogWwhSp48DUowzv_GQf")
 
 #' Unpack cache locally
