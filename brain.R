@@ -14,17 +14,16 @@ downloadGDriveFile <- function(id, out){
 
 message("Retrieve data for tutorials")
 message("Download Data")
-downloadGDriveFile(out="PAGData.tar.gz", id="1W2TJYI1Fc_d7DlYgTLFxaoxeFZ95jZec")
+downloadGDriveFile(out="Training_Dataset.tar.gz", id="1N6fTP_eb6g7OwgP_QpLN7a2XLLZtXmnq")
 
 
 message("Unzipping Data")
-system("tar -xvzf PAGData.tar.gz -C ./ ", intern=TRUE)
+system("tar -xvzf Training_Dataset.tar.gz -C ./ ", intern=TRUE)
 
 message("Done")
 
 
-message("Download R package")
-install.packages("topr")
+message("Download and Install R package")
 install.packages("qqman")
 #downloadGDriveFile(out="r_binaries.tar.gz", id="1-VqZb_Cv63AH8ogWwhSp48DUowzv_GQf")
 
