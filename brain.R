@@ -26,7 +26,7 @@ message("Done")
 message("Download and Install R package")
 install.packages("qqman")
 install.packages("IRdisplay")
-library(IRdisplay
+library(IRdisplay)
 #downloadGDriveFile(out="r_binaries.tar.gz", id="1-VqZb_Cv63AH8ogWwhSp48DUowzv_GQf")
 
 #' Unpack cache locally
