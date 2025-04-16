@@ -14,7 +14,8 @@ downloadGDriveFile <- function(id, out){
 
 message("Retrieve data for tutorials")
 message("Download Data")
-downloadGDriveFile(out="Training_Dataset.tar.gz", id="1uxM4_qxgzyzWSYFUDr6BtlsHdJmfHHuD")
+#downloadGDriveFile(out="Training_Dataset.tar.gz", id="1uxM4_qxgzyzWSYFUDr6BtlsHdJmfHHuD")
+downloadGDriveFile(out="Training_Dataset.tar.gz", id="1vIt8UbPUcrf7JOaACxzhc2eSnz1ElPmB")
 
 
 message("Unzipping Data")
