@@ -20,36 +20,37 @@ downloadGDriveFile(out="PAGData.tar.gz", id="1W2TJYI1Fc_d7DlYgTLFxaoxeFZ95jZec")
 message("Unzipping Data")
 system("tar -xvzf PAGData.tar.gz -C ./ ", intern=TRUE)
 
-message("Done")
+message("Done Data Download")
 
 
-downloadGDriveFile2 <- function(out, id) {
-  # Install gdown into the Python env (quiet)
-  system("pip -q install gdown")
+message("Start installing packages")
 
-  # Use Python to download by file ID (robust to Drive's confirm token)
-  cmd <- sprintf('python - << "PY"
-import gdown
-gdown.download(id="%s", output="%s", quiet=False)
-PY', id, out)
 
-  status <- system(cmd)
-  if (status != 0 || !file.exists(out)) {
-    stop("Download failed. Check that the Drive file share is 'Anyone with the link' and the ID is correct.")
-  }
-  message("✅ Downloaded: ", out)
+
+# 1) Install gdown into the Python env
+system("pip -q install gdown")
+
+# 2) Download your tarball using the full Drive URL (no manual ID needed)
+drive_url <- "https://drive.google.com/file/d/1PiPreD5sH-FylBgeKzI70f8SqglQ0Aww/view?usp=share_link"
+out_file  <- "R_env_2025.tar.gz"
+cmd <- sprintf('gdown --fuzzy "%s" -O "%s"', drive_url, out_file)
+print(cmd)
+status <- system(cmd)
+if (status != 0 || !file.exists(out_file)) {
+  stop("Download failed. Make sure the Drive file is shared as 'Anyone with the link → Viewer'.")
 }
 
+# 3) Extract to root ('/') because the tarball contains absolute paths
+#    like /usr/local/lib/R/site-library/...
+system("rm -rf /usr/local/lib/R/site-library/usr")   # clean accidental nested path
+untar(out_file, exdir = "/", compressed = "gzip")
 
+# 4) Point R to the system library and test
+.libPaths("/usr/local/lib/R/site-library")
+suppressPackageStartupMessages({
+  library(DESeq2)
+  library(ggplot2)
+  library(dplyr)
+})
+message("✅ Packages loaded.")
 
-message("Download R package cache")
-downloadGDriveFile2(out="R_env_2025.tar.gz", id="1PiPreD5sH-FylBgeKzI70f8SqglQ0Awwf")
-
-#' Unpack cache locally
-#message("Unzipping R package cache")
-system("tar -xzf R_env_2025.tar.gz -C ./")
-
-#system("tar -xzf r_binaries.tar.gz -C / ", intern=TRUE)
-
-
-message("Done")
