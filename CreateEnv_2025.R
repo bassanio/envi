@@ -28,7 +28,7 @@ downloadGDriveFile(out="R_env_2025.tar.gz", id="1PiPreD5sH-FylBgeKzI70f8SqglQ0Aw
 
 #' Unpack cache locally
 #message("Unzipping R package cache")
-system("tar -xzf /content/drive/MyDrive/R_env_2025.tar.gz -C /usr/local/lib/R/site-library")
+system("tar -xzf R_env_2025.tar.gz -C ./")
 
 #system("tar -xzf r_binaries.tar.gz -C / ", intern=TRUE)
 
