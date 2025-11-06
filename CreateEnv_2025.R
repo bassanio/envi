@@ -23,8 +23,27 @@ system("tar -xvzf PAGData.tar.gz -C ./ ", intern=TRUE)
 message("Done")
 
 
+downloadGDriveFile2 <- function(out, id) {
+  # Install gdown into the Python env (quiet)
+  system("pip -q install gdown")
+
+  # Use Python to download by file ID (robust to Drive's confirm token)
+  cmd <- sprintf('python - << "PY"
+import gdown
+gdown.download(id="%s", output="%s", quiet=False)
+PY', id, out)
+
+  status <- system(cmd)
+  if (status != 0 || !file.exists(out)) {
+    stop("Download failed. Check that the Drive file share is 'Anyone with the link' and the ID is correct.")
+  }
+  message("✅ Downloaded: ", out)
+}
+
+
+
 message("Download R package cache")
-downloadGDriveFile(out="R_env_2025.tar.gz", id="1PiPreD5sH-FylBgeKzI70f8SqglQ0Awwf")
+downloadGDriveFile2(out="R_env_2025.tar.gz", id="1PiPreD5sH-FylBgeKzI70f8SqglQ0Awwf")
 
 #' Unpack cache locally
 #message("Unzipping R package cache")
